@@ -1,0 +1,41 @@
+<ion-menu id="loggedOutMenu" [content]="content">
+
+  <ion-header>
+    <ion-toolbar color="lgtBlue">
+      <img src="assets/img/logo1.jpg" width="40px" style="display:inline-block" height="40px" />
+      <ion-title class="titleicon" style="display:inline-block">Seeker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            <i class="fa fa-{{p.icon}} {{p.color}}" aria-hidden="true"></i>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu id="loggedInMenu" [content]="content">
+
+  <ion-header>
+    <ion-toolbar color="lgtBlue">
+      <img src="assets/img/logo1.jpg" width="40px" style="display:inline-block" height="40px" />
+      <ion-title class="titleicon" style="display:inline-block">Seeker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of loggedinPages" (click)="openPage(p)">
+            <i class="fa fa-{{p.icon}} {{p.color}}" aria-hidden="true"></i>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

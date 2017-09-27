@@ -1,0 +1,13 @@
+{
+  "name": "seeker",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+
+  "proxies": [
+    {
+      "path": "/user",
+      "proxyUrl": "http://10.42.119.24:8080/user"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.error-container {
+  margin: 5px 0;
+}
+ 
+.error-container:last-child {
+    margin: 5px 0 0;
+}
+ 
+.error {
+  padding: 10px 16px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+}
+ 
+.error i {
+  font-size: 24px;
+  color: #B83E2C;  
+  vertical-align: middle;
+}
+ 
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+ 
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}
+.titleicon div{
+display:inline-block;
+margin-bottom:10px;
+}
+.faGreen {
+   color: #28a54c;
+}
+.faOrange {
+   color: #ff6600;
+}
+.faLightBlue {
+   color: #31C0E6;
+}
+.faYellow {
+   color: #cbc020;
+}
+.faSeek {
+   color: #80ced6;
+}
+.faRed {
+   color: #B83E2C;
+}
+.fa-key{
+    color:#e65100
+ }
+ .fa-envelope-o{
+    color:#00695c
+ }
+ .fa-cogs{
+   color: #d81b60;
+ }
+.fa-wrench{
+  color: green;
+}
+.fa-info-circle
+{
+  color:orange;
+}
+.fa-list-ol{
+  color: yellowgreen;
+}
+.fa-comments-o{
+  color:palevioletred;
+}
+
+.ionContent {
+  background-image: url('../assets/img/jobs.png');
+  -webkit-background-image: url('../assets/img/jobs.png');
+}
+ion-spinner * {
+  width: 28px;
+  height: 28px;
+  stroke:white;
+  fill:#488aff;
+}
+.spinner-container {
+width: 100%;
+text-align: center;
+padding: 10px;
+}
+.bounce {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 0.5s infinite linear;
+  -o-animation: bounce 0.5s infinite linear;
+  -webkit-animation: bounce 0.5s infinite linear;
+  animation: bounce 0.5s infinite linear;
+  colr:000;
+}
+@-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-moz-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-o-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-ms-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}

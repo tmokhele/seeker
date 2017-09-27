@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color="lgtBlue">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Edit User Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-simple-wizard [(step)]="step" [showSteps]="true" [formValidated]="myForm.valid" (finish)="onFinish()" [finishIcon]="'done-all'"
+    [(stepCondition)]="stepCondition">
+    <ion-wizard-step>
+      <form [formGroup]="myForm">
+        <ion-segment color="primary" [(ngModel)]="userInfo.category" formControlName="category">
+          <ion-segment-button value="jobs">
+            Job Seeker
+          </ion-segment-button>
+          <ion-segment-button value="skills">
+            Skill Seeker
+          </ion-segment-button>
+        </ion-segment>
+        <ion-item>
+          <ion-label floating primary>Full name</ion-label>
+          <ion-input [(ngModel)]="userInfo.name" formControlName="name" type="text" id="name" spellcheck="false" autocapitalize="off">
+          </ion-input>
+        </ion-item>
+        <p style="color:red" *ngIf="!isValid('name')" danger padding-left>
+          <mark>Type in name</mark>
+        </p>
+        
+        <ion-item>
+          <ion-label floating primary>Phone</ion-label>
+          <ion-input type="tel" [textMask]="{mask: masks.phoneNumber}" [(ngModel)]="userInfo.phone" formControlName="phone" type="text"
+            id="phone">
+          </ion-input>
+        </ion-item>
+        <p style="color:red" *ngIf="!isValid('phone')" danger padding-left>
+          <mark>Invalid Phone</mark>
+        </p>
+        <!--<ion-item>
+          <ion-label floating primary>Pick an address</ion-label>
+          <ion-input (focus)="showAddressModal();" [(ngModel)]="userInfo.address" type="text" formControlName="address"></ion-input>
+        </ion-item>-->
+        <!--<button ion-button type="submit" block primary [disabled]="!myForm.valid">Submit</button>-->
+      </form>
+    </ion-wizard-step>
+    <ion-wizard-step>
+      <form>
+        <ion-item>
+          <ion-card>
+            <span ng-switch on="isProfilePic()">
+            <img ng-switch-when="profilePic" [src]='userInfo.profilePicURL'>
+             </span>
+          </ion-card>
+        </ion-item>
+        <ion-item>
+          <div class="item item-input-inset">
+            <button ion-button icon-start color="secondary" (click)="takePhoto()">
+               <i class="fa fa-camera fa-lg" aria-hidden="true"></i>
+                Take Photo
+            </button>
+            <button ion-button icon-start color="faGold" (click)="browsePhoto()">
+                <i class="fa fa-file-image-o fa-lg" aria-hidden="true"></i> 
+             Browse
+          </button>
+          </div>
+        </ion-item>
+      </form>
+    </ion-wizard-step>
+  </ion-simple-wizard>
+</ion-content>

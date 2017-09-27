@@ -1,0 +1,71 @@
+<!--
+  Generated template for the Adddetails page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="lgtBlue">
+    <ion-title>Job Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label>Categories</ion-label>
+      <ion-select formControlName="category" [(ngModel)]="jobCat" (ionChange)="onCategoryChange()">
+        <ion-option [value]="null">
+          None
+        </ion-option>
+         <ion-option *ngFor="let category of jobs" [value]="category">{{category.category}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Skill</ion-label>
+        <ion-option [value]="null">
+        None
+    </ion-option>
+      <ion-select formControlName="skill" [(ngModel)]="uSkill" (ionChange)="onSkillChange()">
+        <ion-option *ngFor="let skill of skills" [value]="skill">{{skill.subcategory}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-textarea formControlName="description" [(ngModel)]="jobDesc" placeholder="Enter a job description"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid class="button-group">
+        <ion-row>
+          <ion-col>
+            <button ion-button block color="faGold" (click)="addMore()" [disabled]="!form.valid">
+              <i class="fa fa-plus-square" aria-hidden="true"></i>
+          &nbsp;
+              Add More
+              </button>
+          </ion-col>
+
+          <ion-col>
+            <button ion-button block color="greenDark" (click)="saveInfo()" [disabled]="!form.valid">
+               <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          &nbsp;
+              Save</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </form>
+  <ion-list inset>
+    <ion-item *ngFor="let j of userJobs">
+      <ion-label [ngClass]="{'donestatus': j.skill.subcategory=='done','pendingstatus':j.skill.subcategory=='pending'}">{{j.skill.subcategory}}</ion-label>
+
+      <ion-icon item-right (click)="deleteTask(j)"><i class="fa fa-trash-o fa-fw"></i></ion-icon>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

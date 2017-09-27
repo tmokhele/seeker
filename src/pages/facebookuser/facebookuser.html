@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Facebookuser page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="lgtBlue">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-fab top right edge>
+    <button ion-fab mini color="pinkDarken">
+      <i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+    </button>
+    <ion-fab-list>
+       <button ion-fab color="orgCol" (click)="editUserProfile()"><i class="fa fa-pencil-square-o" title="Edit user details"></i></button>
+            <button ion-fab color="danger" (click)="addUserDetails()"><i class="fa fa-cubes" title="Add Details"></i></button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-card>
+    <span ng-switch on="isProfilePic()">
+            <img ng-switch-when="profilePic" [src]='userDetails.photoURL'>
+             </span>
+    <ion-card-content>
+      <ion-card-title>
+        {{ userDetails.displayName }}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

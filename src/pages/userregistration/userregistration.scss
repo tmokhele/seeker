@@ -1,0 +1,20 @@
+page-userregistration {
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  ion-wizard-step {
+    width: 100%;
+  }
+
+  card-wizard-icon {
+    font-size: 10em;
+  }
+
+.toast-success {
+  > div{
+       background-color:red!important;
+   }
+}
+}

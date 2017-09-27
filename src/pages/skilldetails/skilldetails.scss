@@ -1,0 +1,32 @@
+page-skilldetails {
+    ion-list {
+    ion-item {
+      background-color: transparent;
+      padding-left: 0;
+      position: relative;
+    }
+    ion-label {
+      div {
+        text-transform: none;
+        font-size: 0.8em;
+        padding: 1em 0;
+        white-space: normal;
+        text-align: justify;
+      }
+    }
+   
+}
+.fa-trash-o{
+  color:red;
+}
+.fa-pencil{
+    color: green;
+}
+}
+.alertDanger{
+    background-color: white;
+    color: red;
+    button{
+        color: red;
+    }
+}

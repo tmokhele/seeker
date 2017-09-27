@@ -1,0 +1,68 @@
+<!--
+  Generated template for the Organisations page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="lgtBlue">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides autoplay="5000" loop="true" speed="3000">
+    <ion-slide>
+<ion-content class="ionContent"> 
+ 
+    <svg id="bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.15 224.35">
+        <defs>
+            <style>
+            .cls-1{
+            fill:#dd238c;
+            }
+            .cls-2{
+            fill:#ef4328;
+            }
+            .cls-3{
+            fill:#cbc020;
+            }.cls-4{
+            fill:#febf12
+            ;}
+            .cls-5{
+            fill:whitesmoke;
+            }
+             .cls-6{
+            fill:#31C0E6;
+            }
+            </style>
+        </defs>
+        <rect class="cls-1" x="27.22" width="20.06" height="163.78"/>
+        <rect class="cls-2" y="4" width="20.06" height="163.78"/>
+        <rect class="cls-3" x="13.9" y="13.1" width="20.06" height="163.78"/>
+        <rect class="cls-4" x="43.1" y="7.45" width="20.06" height="163.78"/>
+        <rect class="cls-6" x="7.6" y="25.45" width="20.06" height="163.78"/>
+        <!--<text class="cls-5" x="15" y="75" font-size="12" font-family="monospace">Seeker</text>-->
+    </svg>
+ 
+</ion-content>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/logo1.jpg" class="slide-image"/>
+      <h3 class="slide-title">About Seeker</h3>
+      <p color="yellow">Seeker provides a central platform for you to source a wide range of skills at your convenience</p>
+      <p>Additionally, it gives you the ability to rate services offered by registered job seekers in our platform</p>
+       <p>No need to run arround when looking for skilled labour to assist you in any task. All you need to do is allow us to acccess your location
+         and we will give you area specif skills that you need for any job
+       </p>
+      <button ion-button medium clear icon-right color="primary" (click)="isContinue()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

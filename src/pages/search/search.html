@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="lgtBlue">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Users</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content speaker-list">
+  <ion-fab top right edge>
+    <button ion-fab mini color="secondary" (click)="presentPopover($event)">
+  <ion-icon ios="ios-options" md="md-options"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-list [virtualScroll]="userJobs" [approxItemHeight]="'132px'">
+    <ion-grid fixed>
+      <ion-row align-items-stretch>
+
+        <ion-col col-12 col-md-6 align-self-stretch align-self-center *virtualItem="let speaker" approxItemHeight="457px">
+
+          <ion-card class="speaker-card">
+            <ion-card-header>
+              <button ion-item detail-none (click)="goToSpeakerDetail(speaker)">
+                <ion-avatar item-left>
+                  <img [src]="speaker.userInfo.profilePicURL" alt="Speaker profile pic">
+                </ion-avatar>
+                {{speaker.userInfo.name}}
+              </button>
+            </ion-card-header>
+
+            <ion-card-content class="outer-content">
+              <ion-list>
+                <p><strong style="font-family:garamond; color:darkorange;"><i class="fa fa-users" aria-hidden="true"></i></strong>&nbsp;{{speaker.userJobs.jobcat.category}}</p>
+                <p><strong style="font-family:garamond; color:seagreen;"><i class="fa fa-globe" aria-hidden="true"></i></strong>&nbsp;{{speaker.userInfo.province}},{{speaker.userInfo.local}}</p>
+                <p><strong  style="font-family:garamond; color:palevioletred;"><i class="fa fa-question-circle" aria-hidden="true"></i></strong>&nbsp;{{speaker.userJobs.jobDescribtion}}</p>
+                <!--<rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+                  nullable="false">-->
+                  <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+                <!--</rating>-->
+              </ion-list>
+            </ion-card-content>
+            <ion-row>
+              <ion-col col-12 col-lg-auto text-center text-lg-right>
+                <button ion-button clear small color="primary" icon-start (click)="openContact(speaker)">
+                  <ion-icon name='chatboxes'></ion-icon>
+                  Contact
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,26 @@
+    .ios ion-card ion-avatar img {
+  max-width: 8rem;
+  max-height: 8rem;
+  border-radius: 50%;
+}
+
+div.selection {
+  font-size: 22px;
+  display: block;
+  text-align: center;
+  padding-top: 5%;
+}
+#notifications-badge {
+            background-color: salmon;
+            position: absolute;
+            top: -9px;
+            right: -1px;
+            border-radius: 50%;
+        }
+         #notification-button {            
+            position: relative;
+            width: 62px;
+            top:1px;
+            right: 1px;
+            overflow: visible!important;
+        }

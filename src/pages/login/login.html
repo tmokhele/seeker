@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="lgtBlue">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div padding [@flyInBottomFast]="cloudState" id="cloud-layer">
+    <form [formGroup]="authForm">
+      <ion-row>
+        <ion-col>
+          <img [@flyInBottomSlow]="logoState" src="assets/img/lock.jpeg" />
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-list inset [@bounceInBottom]="formState">
+            <ion-item>
+              <ion-label><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; username</ion-label>
+              <ion-input type="text" [(ngModel)]="loginInfo.email" name="email" id="email" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label><i class="fa fa-key" aria-hidden="true"></i>&nbsp; password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="loginInfo.password" id="password" formControlName="password"></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button class="login-button" [@fadeIn]="loginState" [disabled]="!authForm.valid" (click)="emailLogin()"> <i class="fa fa-sign-in bounce" aria-hidden="true"></i>
+&nbsp; &nbsp;Login</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button class="login-button2" [@fadeIn]="loginState" [disabled]="authForm.valid" (click)="twitterLogin()"><i class="fa fa-twitter bounce" aria-hidden="true"></i>
+&nbsp; &nbsp; Twitter</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button class="login-button3" [@fadeIn]="loginState" [disabled]="authForm.valid" (click)="facebookLogin()"><i class="fa fa-facebook bounce" aria-hidden="true"></i>
+&nbsp; &nbsp; Facebook</button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button class="login-button4" [@fadeIn]="loginState" [disabled]="authForm.valid" (click)="userRegistration()"><i class="fa fa-user-plus bounce" aria-hidden="true"></i>
+&nbsp; &nbsp; Register new user</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+
+</ion-content>
