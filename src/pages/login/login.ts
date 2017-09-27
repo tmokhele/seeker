@@ -156,13 +156,14 @@ export class LoginPage {
 
   twitterLogin() {
     this.userservice.twitterLogin().subscribe(twitterUser => {
-      this.userservice.retrieveUserInformation(twitterUser.uid).subscribe(userInfo => {
+      const uid = twitterUser.uid;
+      this.userservice.retrieveUserInformation(uid).subscribe(userInfo => {
         if (userInfo.length == 0) {
-          console.log('user register')
+         
           this.regiterUser(twitterUser);
         }
       });
-      this.userData.setUid(twitterUser.uid);
+      this.userData.setUid(uid);
       this.userProfile = twitterUser;
       this.userData.faceBookLogin(twitterUser);
       this.userData.setUserDetails(twitterUser);
@@ -208,6 +209,7 @@ export class LoginPage {
 
   regiterUser(userInfo: any) {
       this.userProfileInfo.name = userInfo.displayName;
+      this.userProfileInfo.uid = userInfo.uid;
       this.userProfileInfo.email = userInfo.email;
       this.userProfileInfo.profilePicURL = userInfo.photoURL;
       this.userProfileInfo.phone = userInfo.phoneNumber != null ? userInfo.phoneNumber : '';

@@ -83,6 +83,7 @@ export class Userservice {
 
   retrieveUserInformation(userId: String) {
     return Observable.create(observer => {
+      console.log('user register',userId)
       this.subscription = this.db.list('profileInformation', {
         query: {
           orderByChild: 'uid',
